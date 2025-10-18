@@ -147,8 +147,7 @@ async def openrouter_insight(session: aiohttp.ClientSession, rows: list):
             },
             {"role": "user", "content": prompt},
         ],
-        "temperature": 0.3,
-        "max_tokens": 160,
+        "temperature": 0.3
     }
     try:
         async with session.post(
@@ -173,12 +172,8 @@ async def openrouter_insight(session: aiohttp.ClientSession, rows: list):
             if not choices:
                 print("OpenRouter response kosong:", data)
                 return ""
-            content = (
-                choices[0]
-                .get("message", {})
-                .get("content", "")
-                .strip()
-            )
+            content = choices[0].get("message", {}).get("reasoning", "").strip()
+            print("OpenRouter content:", content)
             return content
     except Exception as e:
         print("OpenRouter exception:", e)
