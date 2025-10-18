@@ -48,7 +48,7 @@ Bot akan melakukan polling sesuai interval yang ditentukan. Tekan `Ctrl+C` untuk
 ### Menjalankan via Docker
 ```bash
 docker build -t indodax-signal .
-docker run docker run -d  indodax-signal
+docker run -d  indodax-signal
 ```
 
 Jika ingin override variabel langsung:
