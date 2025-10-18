@@ -128,7 +128,9 @@ async def openrouter_insight(session: aiohttp.ClientSession, rows: list):
 
     prompt = (
         "Buat ringkasan singkat (maks 2 kalimat, bahasa Indonesia) soal pergerakan harga coin Indodax berikut. "
-        "Sertakan insight praktis, hindari financial advice dan hindari kepastian berlebihan.\n\n"
+        "Sertakan insight praktis untuk trader:\n\n"
+        "Sertakan interpretasi tren harga (misalnya stabil, cenderung naik, atau koreksi terbatas) berdasarkan price, high, dan low. \n\n"
+        "Tambahkan estimasi area entry (buy), take profit (TP), dan cut loss (CL) dengan pendekatan\n\n"
         + json.dumps(sample_rows, ensure_ascii=False, indent=2)
     )
 

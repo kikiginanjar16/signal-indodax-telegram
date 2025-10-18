@@ -13,6 +13,6 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY main.py ./
-COPY .env.example ./
+COPY .env ./
 
 CMD ["python", "main.py"]
